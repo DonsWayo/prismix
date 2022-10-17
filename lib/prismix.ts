@@ -30,9 +30,9 @@ type Schema = NonNullable<UnPromisify<ReturnType<typeof getSchema>>>;
 
 async function getSchema(schemaPath: string) {
   try {
-    const schema = await readFile(schemaPath), {
-      encoding: 'utf-8'
-    });
+   
+    const schema = await readFile(schemaPath, { encoding: 'utf-8'});
+
 
     const dmmf = await getDMMF({ datamodel: schema });
     const customAttributes = getCustomAttributes(schema);
