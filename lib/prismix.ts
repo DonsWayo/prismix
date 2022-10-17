@@ -30,7 +30,7 @@ type Schema = NonNullable<UnPromisify<ReturnType<typeof getSchema>>>;
 
 async function getSchema(schemaPath: string) {
   try {
-    const schema = await readFile(path.join(process.cwd(), schemaPath), {
+    const schema = await readFile(schemaPath), {
       encoding: 'utf-8'
     });
 
